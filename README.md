@@ -14,7 +14,7 @@ defined in another.
 The Oso Cloud CLI should be installed on the runner before using this action.
 Use the setup-oso-cloud action to do this.
 
-Inputs: none
-Outputs: none
+- __Inputs:__ none
+- __Outputs:__ none
 
 Succeeds if the `oso-cloud validate` command succeeds, fails otherwise.
