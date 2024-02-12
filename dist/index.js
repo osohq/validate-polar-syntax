@@ -4319,6 +4319,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.validate = void 0;
+const core = __importStar(__nccwpck_require__(2186));
 const exec = __importStar(__nccwpck_require__(1514));
 const fs = __importStar(__nccwpck_require__(7147));
 const glob_1 = __nccwpck_require__(8211);
@@ -4342,6 +4343,8 @@ async function validate() {
     });
     const polarFilesNoSymlinks = polarFiles.filter(file => !fs.lstatSync(file).isSymbolicLink());
     await exec.exec('oso-cloud', ['validate'].concat(polarFilesNoSymlinks), options);
+    core.debug(`stdout from validation: \n${output}`);
+    core.debug(`stderr from validation: \n${error}`);
     return true;
 }
 exports.validate = validate;
